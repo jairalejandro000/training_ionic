@@ -1,9 +1,25 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>signup</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>
+<div class="content">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Registrarse</ion-card-title>
+    </ion-card-header>
+    <ion-card-content fullscreen>
+      <form [formGroup]="signupForm">
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input type="text" name="name" formControlName="name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Corre electronico</ion-label>
+          <ion-input type="email" name="email" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" name="pass" formControlName="pass"></ion-input>
+        </ion-item>
+        <ion-button color="warning" (click)="signup()">Registrarse</ion-button>
+        <p>¿Ya tienes una cuenta? <p [routerLink]="['/auth/login']">Iniciar sesión ahora</p>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</div>
